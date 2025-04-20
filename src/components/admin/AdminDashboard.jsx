@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { getToken } from '../../lib/auth';
 import BatchManagement from './BatchManagement';
 import SubjectManagement from './SubjectManagement';
@@ -38,9 +38,9 @@ function AdminDashboard() {
         return;
       }
       
-      console.log('Fetching dashboard stats from:', 'http://localhost:3000/api/admin/dashboard');
+      console.log('Fetching dashboard stats from:', 'https://lab-manage-backend.onrender.com/api/admin/dashboard');
       
-      const response = await fetch('http://localhost:3000/api/admin/dashboard', {
+      const response = await fetch('https://lab-manage-backend.onrender.com/api/admin/dashboard', {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -92,7 +92,7 @@ function AdminDashboard() {
       const formData = new FormData();
       formData.append('file', file);
       
-      const response = await fetch(`http://localhost:3000/api/admin/upload/${uploadType}`, {
+      const response = await fetch(`https://lab-manage-backend.onrender.com/api/admin/upload/${uploadType}`, {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`

@@ -16,7 +16,7 @@ axios.interceptors.request.use(
 );
 
 // Make sure this points to where your backend is actually running
-const API_URL = 'http://localhost:3000/api';
+const API_URL = 'https://lab-manage-backend.onrender.com/api';
 
 // Save assessment data
 export const saveAssessment = async (assessmentData) => {

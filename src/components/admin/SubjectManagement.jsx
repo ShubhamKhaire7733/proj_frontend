@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { getToken } from '../../lib/auth';
 
 function SubjectManagement() {
@@ -25,7 +25,7 @@ function SubjectManagement() {
       setLoading(true);
       const token = getToken();
       
-      const response = await fetch('http://localhost:3000/api/admin/subjects', {
+      const response = await fetch('https://lab-manage-backend.onrender.com/api/admin/subjects', {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -49,7 +49,7 @@ function SubjectManagement() {
     try {
       const token = getToken();
       
-      const response = await fetch('http://localhost:3000/api/admin/batches', {
+      const response = await fetch('https://lab-manage-backend.onrender.com/api/admin/batches', {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -81,8 +81,8 @@ function SubjectManagement() {
     try {
       const token = getToken();
       const url = editingSubject 
-        ? `http://localhost:3000/api/admin/subjects/${editingSubject.id}`
-        : 'http://localhost:3000/api/admin/subjects';
+        ? `https://lab-manage-backend.onrender.com/api/admin/subjects/${editingSubject.id}`
+        : 'https://lab-manage-backend.onrender.com/api/admin/subjects';
       
       const method = editingSubject ? 'PUT' : 'POST';
       
@@ -149,7 +149,7 @@ function SubjectManagement() {
     try {
       const token = getToken();
       
-      const response = await fetch(`http://localhost:3000/api/admin/subjects/${id}`, {
+      const response = await fetch(`https://lab-manage-backend.onrender.com/api/admin/subjects/${id}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${token}`

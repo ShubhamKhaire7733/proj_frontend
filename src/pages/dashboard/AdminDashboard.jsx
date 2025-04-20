@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { getToken } from '../../lib/auth';
 
 function AdminDashboard() {
@@ -15,7 +15,7 @@ function AdminDashboard() {
         const token = getToken();
         
         // Fetch students with marks
-        const studentsResponse = await fetch('http://localhost:3000/api/admin/students/marks', {
+        const studentsResponse = await fetch('https://lab-manage-backend.onrender.com/api/admin/students/marks', {
           headers: {
             'Authorization': `Bearer ${token}`
           }
@@ -29,7 +29,7 @@ function AdminDashboard() {
         setStudents(studentsData);
         
         // Fetch dashboard stats
-        const statsResponse = await fetch('http://localhost:3000/api/admin/dashboard', {
+        const statsResponse = await fetch('https://lab-manage-backend.onrender.com/api/admin/dashboard', {
           headers: {
             'Authorization': `Bearer ${token}`
           }

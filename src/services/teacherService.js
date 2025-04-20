@@ -42,7 +42,7 @@ axiosInstance.interceptors.response.use(
   }
 );
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000/api';
+const API_URL = import.meta.env.VITE_API_URL || 'https://lab-manage-backend.onrender.com/api';
 
 // Get current teacher's profile
 export const getCurrentTeacher = async () => {

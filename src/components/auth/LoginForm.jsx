@@ -1,8 +1,8 @@
+import { Eye, EyeOff, LockKeyhole, Mail, UserCircle } from 'lucide-react';
 import { useState } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
-import { setToken } from '../../lib/auth';
-import { LockKeyhole, Mail, UserCircle, Eye, EyeOff } from 'lucide-react';
+import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import { setToken } from '../../lib/auth';
 
 function LoginForm() {
   const [email, setEmail] = useState('');
@@ -19,7 +19,7 @@ function LoginForm() {
     setError('');
 
     try {
-      const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000/api';
+      const API_URL = import.meta.env.VITE_API_URL || 'https://lab-manage-backend.onrender.com/api';
       const response = await fetch(`${API_URL}/auth/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },

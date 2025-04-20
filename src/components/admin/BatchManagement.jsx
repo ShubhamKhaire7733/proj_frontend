@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { getToken } from '../../lib/auth';
 
 const BatchManagement = () => {
@@ -28,7 +28,7 @@ const BatchManagement = () => {
 
   const fetchTeachers = async () => {
     try {
-      const response = await fetch('http://localhost:3000/api/teachers/all', {
+      const response = await fetch('https://lab-manage-backend.onrender.com/api/teachers/all', {
         headers: {
           'Authorization': `Bearer ${getToken()}`
         }
@@ -48,7 +48,7 @@ const BatchManagement = () => {
   const fetchBatches = async () => {
     try {
       setLoading(true);
-      const response = await fetch('http://localhost:3000/api/batches', {
+      const response = await fetch('https://lab-manage-backend.onrender.com/api/batches', {
         headers: {
           'Authorization': `Bearer ${getToken()}`
         }
@@ -92,8 +92,8 @@ const BatchManagement = () => {
       };
 
       const url = editingBatch 
-        ? `http://localhost:3000/api/batches/${editingBatch.id}`
-        : 'http://localhost:3000/api/batches';
+        ? `https://lab-manage-backend.onrender.com/api/batches/${editingBatch.id}`
+        : 'https://lab-manage-backend.onrender.com/api/batches';
       
       const method = editingBatch ? 'PUT' : 'POST';
 
@@ -168,7 +168,7 @@ const BatchManagement = () => {
 
     try {
       setLoading(true);
-      const response = await fetch(`http://localhost:3000/api/batches/${id}`, {
+      const response = await fetch(`https://lab-manage-backend.onrender.com/api/batches/${id}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${getToken()}`

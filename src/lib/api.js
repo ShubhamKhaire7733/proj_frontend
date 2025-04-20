@@ -1,4 +1,4 @@
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000/api';
+const API_URL = import.meta.env.VITE_API_URL || 'https://lab-manage-backend.onrender.com/api';
 
 export async function fetchAssignments(studentId) {
   const response = await fetch(`${API_URL}/assignments/student/${studentId}`, {

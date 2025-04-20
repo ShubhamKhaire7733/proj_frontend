@@ -1,6 +1,6 @@
+import { BookOpen, Building2, LockKeyhole, Mail, Phone, UserCircle } from 'lucide-react';
 import { useState } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
-import { Mail, LockKeyhole, UserCircle, Phone, Building2, BookOpen } from 'lucide-react';
+import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 function RegisterForm() {
@@ -47,7 +47,7 @@ function RegisterForm() {
     }
 
     try {
-      const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000/api';
+      const API_URL = import.meta.env.VITE_API_URL || 'https://lab-manage-backend.onrender.com/api';
       const response = await fetch(`${API_URL}/auth/register`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
